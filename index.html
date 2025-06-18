@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Suggestions for Students & Developers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Laptop Selection Guide</h1>
+            <p class="subtitle">Find your perfect laptop between ₹25,000 - ₹50,000</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#recommendations">Top Picks</a></li>
+                    <li><a href="#new-laptops">New Laptops</a></li>
+                    <li><a href="#refurbished">Refurbished</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#gaming">Gaming</a></li>
+                    <li><a href="#discounts">Discounts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="recommendations" class="section">
+            <h2>Top Recommendations</h2>
+            <div class="cards-container">
+                <div class="card best-value">
+                    <div class="card-header">
+                        <i class="fas fa-award"></i>
+                        <h3>Best Overall Value</h3>
+                    </div>
+                    <h4>HP Pavilion 15-eh1003AU</h4>
+                    <p class="price">₹40,990</p>
+                    <ul>
+                        <li>AMD Ryzen 5 5500U (6C/12T)</li>
+                        <li>8GB DDR4 RAM</li>
+                        <li>512GB SSD</li>
+                        <li>Vega 7 Graphics</li>
+                        <li>Light Gaming Capable</li>
+                    </ul>
+                </div>
+
+                <div class="card gaming">
+                    <div class="card-header">
+                        <i class="fas fa-gamepad"></i>
+                        <h3>Best for Gaming</h3>
+                    </div>
+                    <h4>Acer Nitro 5 AN515-45</h4>
+                    <p class="price">₹48,999</p>
+                    <ul>
+                        <li>AMD Ryzen 5 5600H</li>
+                        <li>8GB DDR4 RAM</li>
+                        <li>512GB SSD</li>
+                        <li>GTX 1650Ti 4GB</li>
+                        <li>Excellent Gaming Performance</li>
+                    </ul>
+                </div>
+
+                <div class="card budget">
+                    <div class="card-header">
+                        <i class="fas fa-wallet"></i>
+                        <h3>Best Budget Pick</h3>
+                    </div>
+                    <h4>HP 15s-eq2144AU</h4>
+                    <p class="price">₹36,990</p>
+                    <ul>
+                        <li>AMD Ryzen 5 5500U</li>
+                        <li>8GB DDR4 RAM</li>
+                        <li>512GB SSD</li>
+                        <li>Vega 7 Graphics</li>
+                        <li>Great Value</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="filter-section" class="section">
+            <h2>Filter Laptops</h2>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="all">All Laptops</option>
+                        <option value="new">New Laptops</option>
+                        <option value="refurbished">Refurbished</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-range">Max Price:</label>
+                    <select id="price-range">
+                        <option value="50000">₹50,000</option>
+                        <option value="40000">₹40,000</option>
+                        <option value="30000">₹30,000</option>
+                        <option value="20000">₹20,000</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="usage">Primary Use:</label>
+                    <select id="usage">
+                        <option value="all">All Uses</option>
+                        <option value="coding">Coding</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="design">Design</option>
+                        <option value="general">General Use</option>
+                    </select>
+                </div>
+                <button id="apply-filters" class="btn">Apply Filters</button>
+            </div>
+        </section>
+
+        <!-- New Laptops Section -->
+        <section id="new-laptops" class="section">
+            <h2>New Laptops</h2>
+            <div class="search-container">
+                <input type="text" id="new-search" placeholder="Search new laptops..." class="search-input">
+                <button id="new-search-btn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="table-container">
+                <table class="laptops-table" id="new-laptops-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Processor</th>
+                            <th>RAM</th>
+                            <th>Storage</th>
+                            <th>Web Dev</th>
+                            <th>App Dev</th>
+                            <th>AI Dev</th>
+                            <th>Video Edit</th>
+                            <th>Gaming</th>
+                            <th>Price (₹)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="new-laptops-body">
+                        <!-- New laptops will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Refurbished Laptops Section -->
+        <section id="refurbished" class="section">
+            <h2>Refurbished Laptops</h2>
+            <div class="search-container">
+                <input type="text" id="refurbished-search" placeholder="Search refurbished laptops..." class="search-input">
+                <button id="refurbished-search-btn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="table-container">
+                <table class="laptops-table" id="refurbished-laptops-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Processor</th>
+                            <th>RAM</th>
+                            <th>Storage</th>
+                            <th>Web Dev</th>
+                            <th>App Dev</th>
+                            <th>AI Dev</th>
+                            <th>Video Edit</th>
+                            <th>Gaming</th>
+                            <th>Price (₹)</th>
+                            <th>Warranty</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="refurbished-laptops-body">
+                        <!-- Refurbished laptops will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Gaming Performance Section -->
+        <section id="gaming" class="section">
+            <h2>Gaming Performance Guide</h2>
+            <div class="table-container">
+                <table class="gaming-table">
+                    <thead>
+                        <tr>
+                            <th>Gaming Category</th>
+                            <th>Performance Level</th>
+                            <th>Minimum Processor</th>
+                            <th>Minimum RAM</th>
+                            <th>Graphics Card</th>
+                            <th>Example Games</th>
+                            <th>Settings Quality</th>
+                            <th>FPS Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Gaming performance data will be loaded by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="student-discounts" class="section">
+            <h2>Student Discounts</h2>
+            <div class="discount-cards">
+                <!-- Discount cards will be loaded by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Laptop Selection Guide. All prices are in Indian Rupees (₹).</p>
+            <p>Note: Prices and availability are subject to change. Please verify with retailers before making a purchase.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
