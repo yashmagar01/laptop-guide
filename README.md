@@ -4,7 +4,7 @@ Welcome to the Ultimate Laptop Guide! 🎉 This is a comprehensive, single-page 
 
 ### ✨ Live Demo
 
-*[Link to your live demo will go here once deployed!]*
+**laptop-guide.vercel.app**
 
 ---
 
