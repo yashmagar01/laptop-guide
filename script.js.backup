@@ -1,0 +1,1460 @@
+// Main Application Module
+const laptopGuideApp = (function() {
+    // Complete Laptops Data
+    const laptopsData = [
+        // New Laptops (1-23)
+        {
+            id: 1,
+            model: 'HP Pavilion 15-eh1003AU',
+            processor: 'AMD Ryzen 5 5500U (2.1-4.0 GHz, 6C/12T)',
+            ram: '8GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'RAM+SSD',
+            webDev: '✅ Excellent',
+            appDev: '✅ Good',
+            aiDev: '⚠️ Basic',
+            videoEditing: '✅ Good',
+            gaming: '🎮 Light Gaming (Vega 7)',
+            discount: '10% HP Education',
+            brand: 'HP Inc.',
+            year: 2023,
+            price: 40990,
+            amazon: 41999,
+            flipkart: 42500,
+            official: 40990,
+            offline: '43,000-45,000',
+            type: 'new',
+            bestFor: ['coding', 'general']
+        },
+        {
+            id: 2,
+            model: 'Lenovo IdeaPad 3 15ITL6',
+            processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+            ram: '8GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'Both',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '⚠️ Moderate',
+            videoEditing: '✅ Good',
+            gaming: '🎮 Light Gaming (Iris Xe)',
+            discount: '12% Lenovo Portal',
+            brand: 'Lenovo',
+            year: 2023,
+            price: 44500,
+            amazon: 45990,
+            flipkart: 46200,
+            official: 44500,
+            offline: '46,000-48,000',
+            type: 'new',
+            bestFor: ['coding', 'general']
+        },
+        {
+            id: 3,
+            model: 'ASUS VivoBook 15 X515EA',
+            processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+            ram: '8GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'RAM+SSD',
+            webDev: '✅ Excellent',
+            appDev: '✅ Good',
+            aiDev: '⚠️ Basic',
+            videoEditing: '✅ Good',
+            gaming: '🎮 Light Gaming (Iris Xe)',
+            discount: '8% ASUS Education',
+            brand: 'ASUS',
+            year: 2023,
+            price: 42990,
+            amazon: 43990,
+            flipkart: 44500,
+            official: 42990,
+            offline: '44,000-46,000',
+            type: 'new',
+            bestFor: ['coding', 'general']
+        },
+        {
+            id: 4,
+            model: 'Acer Aspire 5 A515-56',
+            processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+            ram: '16GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'RAM+SSD',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '⚠️ Moderate',
+            videoEditing: '✅ Good',
+            gaming: '🎮 Light Gaming (Iris Xe)',
+            discount: '7% Acer Education',
+            brand: 'Acer',
+            year: 2023,
+            price: 44990,
+            amazon: 45990,
+            flipkart: 46500,
+            official: 44990,
+            offline: '46,000-48,000',
+            type: 'new',
+            bestFor: ['coding', 'multitasking']
+        },
+        {
+            id: 5,
+            model: 'Dell Inspiron 3511',
+            processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+            ram: '8GB DDR4',
+            storage: '1TB HDD + 256GB SSD',
+            expandable: 'Both',
+            webDev: '✅ Excellent',
+            appDev: '✅ Good',
+            aiDev: '⚠️ Basic',
+            videoEditing: '⚠️ Basic',
+            gaming: '⚠️ Very Limited',
+            discount: '10% Dell University',
+            brand: 'Dell',
+            year: 2023,
+            price: 46990,
+            amazon: 47990,
+            flipkart: 48500,
+            official: 46990,
+            offline: '48,000-50,000',
+            type: 'new',
+            bestFor: ['general', 'office']
+        },
+        {
+            id: 6,
+            model: 'Lenovo IdeaPad Slim 3 82H801L9IN',
+            processor: 'AMD Ryzen 5 5500U (2.1-4.0 GHz, 6C/12T)',
+            ram: '16GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'RAM+SSD',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '✅ Good',
+            videoEditing: '✅ Good',
+            gaming: '🎮 Light Gaming (Vega 7)',
+            discount: '12% Lenovo Portal',
+            brand: 'Lenovo',
+            year: 2023,
+            price: 47990,
+            amazon: 48990,
+            flipkart: 49500,
+            official: 47990,
+            offline: '49,000-51,000',
+            type: 'new',
+            bestFor: ['coding', 'multitasking']
+        },
+        {
+            id: 7,
+            model: 'ASUS TUF Gaming F15',
+            processor: 'Intel Core i5-11400H (2.7-4.5 GHz, 6C/12T)',
+            ram: '16GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'Both',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '✅ Good',
+            videoEditing: '✅ Excellent',
+            gaming: '🎮 Excellent Gaming (RTX 3050)',
+            discount: '8% ASUS Education',
+            brand: 'ASUS',
+            year: 2023,
+            price: 67990,
+            amazon: 68990,
+            flipkart: 69500,
+            official: 67990,
+            offline: '69,000-72,000',
+            type: 'new',
+            bestFor: ['gaming', 'design', 'development']
+        },
+        {
+            id: 8,
+            model: 'HP Victus 15-fa0166TX',
+            processor: 'Intel Core i5-12450H (2.0-4.4 GHz, 8C/12T)',
+            ram: '16GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'Both',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '✅ Good',
+            videoEditing: '✅ Excellent',
+            gaming: '🎮 Excellent Gaming (RTX 3050)',
+            discount: '10% HP Education',
+            brand: 'HP',
+            year: 2023,
+            price: 69990,
+            amazon: 71990,
+            flipkart: 72500,
+            official: 69990,
+            offline: '71,000-74,000',
+            type: 'new',
+            bestFor: ['gaming', 'design', 'development']
+        },
+        {
+            id: 9,
+            model: 'Acer Nitro 5 AN515-58',
+            processor: 'Intel Core i5-12500H (2.5-4.5 GHz, 12C/16T)',
+            ram: '16GB DDR4',
+            storage: '512GB SSD',
+            expandable: 'Both',
+            webDev: '✅ Excellent',
+            appDev: '✅ Excellent',
+            aiDev: '✅ Good',
+            videoEditing: '✅ Excellent',
+            gaming: '🎮 Excellent Gaming (RTX 3050 Ti)',
+            discount: '7% Acer Education',
+            brand: 'Acer',
+            year: 2023,
+        }
+    ];
+
+    // Function to get laptops data
+    function getLaptopsData() {
+        return laptopsData;
+    }
+
+    // Function to get laptop by id
+    function getLaptopById(id) {
+        return laptopsData.find(laptop => laptop.id === id);
+    }
+
+    // Function to filter laptops by bestFor
+    function filterLaptopsByBestFor(bestFor) {
+        return laptopsData.filter(laptop => laptop.bestFor.includes(bestFor));
+    }
+
+    // Expose functions to the outside
+    return {
+        getLaptopsData,
+        getLaptopById,
+        filterLaptopsByBestFor
+    };
+})();
+
+// Example usage:
+console.log(laptopGuideApp.getLaptopsData());
+console.log(laptopGuideApp.getLaptopById(1));
+console.log(laptopGuideApp.filterLaptopsByBestFor('coding'));
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'RAM+SSD',
+        webDev: '✅ Excellent',
+        appDev: '✅ Good',
+        aiDev: '⚠️ Basic',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '10% HP Education',
+        brand: 'HP Inc.',
+        year: 2023,
+        price: 40990,
+        amazon: 41999,
+        flipkart: 42500,
+        official: 40990,
+        offline: '43,000-45,000',
+        type: 'new',
+        bestFor: ['coding', 'general']
+    },
+    {
+        id: 2,
+        model: 'Lenovo IdeaPad 3 15ITL6',
+        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '⚠️ Moderate',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '12% Lenovo Portal',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 44500,
+        amazon: 45990,
+        flipkart: 46200,
+        official: 44500,
+        offline: '46,000-48,000',
+        type: 'new',
+        bestFor: ['coding', 'general']
+    },
+    {
+        id: 3,
+        model: 'ASUS VivoBook 15 X515EA',
+        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'RAM+SSD',
+        webDev: '✅ Excellent',
+        appDev: '✅ Good',
+        aiDev: '⚠️ Basic',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '8% ASUS Education',
+        brand: 'ASUS',
+        year: 2023,
+        price: 42990,
+        amazon: 43990,
+        flipkart: 44500,
+        official: 42990,
+        offline: '44,000-46,000',
+        type: 'new',
+        bestFor: ['coding', 'general']
+    },
+    {
+        id: 4,
+        model: 'Acer Aspire 5 A515-56',
+        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'RAM+SSD',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '⚠️ Moderate',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '7% Acer Education',
+        brand: 'Acer',
+        year: 2023,
+        price: 44990,
+        amazon: 45990,
+        flipkart: 46500,
+        official: 44990,
+        offline: '46,000-48,000',
+        type: 'new',
+        bestFor: ['coding', 'multitasking']
+    },
+    {
+        id: 5,
+        model: 'Dell Inspiron 3511',
+        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+        ram: '8GB DDR4',
+        storage: '1TB HDD + 256GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Good',
+        aiDev: '⚠️ Basic',
+        videoEditing: '⚠️ Basic',
+        gaming: '⚠️ Very Limited',
+        discount: '10% Dell University',
+        brand: 'Dell',
+        year: 2023,
+        price: 46990,
+        amazon: 47990,
+        flipkart: 48500,
+        official: 46990,
+        offline: '48,000-50,000',
+        type: 'new',
+        bestFor: ['general', 'office']
+    },
+    {
+        id: 6,
+        model: 'Lenovo IdeaPad Slim 3 82H801L9IN',
+        processor: 'AMD Ryzen 5 5500U (2.1-4.0 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'RAM+SSD',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '12% Lenovo Portal',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 47990,
+        amazon: 48990,
+        flipkart: 49500,
+        official: 47990,
+        offline: '49,000-51,000',
+        type: 'new',
+        bestFor: ['coding', 'multitasking']
+    },
+    {
+        id: 7,
+        model: 'ASUS TUF Gaming F15',
+        processor: 'Intel Core i5-11400H (2.7-4.5 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050)',
+        discount: '8% ASUS Education',
+        brand: 'ASUS',
+        year: 2023,
+        price: 67990,
+        amazon: 68990,
+        flipkart: 69500,
+        official: 67990,
+        offline: '69,000-72,000',
+        type: 'new',
+        bestFor: ['gaming', 'design', 'development']
+    },
+    {
+        id: 8,
+        model: 'HP Victus 15-fa0166TX',
+        processor: 'Intel Core i5-12450H (2.0-4.4 GHz, 8C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050)',
+        discount: '10% HP Education',
+        brand: 'HP',
+        year: 2023,
+        price: 69990,
+        amazon: 71990,
+        flipkart: 72500,
+        official: 69990,
+        offline: '71,000-74,000',
+        type: 'new',
+        bestFor: ['gaming', 'design', 'development']
+    },
+    {
+        id: 9,
+        model: 'Acer Nitro 5 AN515-58',
+        processor: 'Intel Core i5-12500H (2.5-4.5 GHz, 12C/16T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050 Ti)',
+        discount: '7% Acer Education',
+        brand: 'Acer',
+        year: 2023,
+        price: 72990,
+        amazon: 74990,
+        flipkart: 75500,
+        official: 72990,
+        offline: '74,000-77,000',
+        type: 'new',
+        bestFor: ['gaming', 'design', 'development']
+    },
+    {
+        id: 10,
+        model: 'Lenovo IdeaPad Gaming 3 82S801L8IN',
+        processor: 'AMD Ryzen 5 6600H (3.3-4.5 GHz, 6C/12T)',
+        ram: '16GB DDR5',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050)',
+        discount: '12% Lenovo Portal',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 68990,
+        amazon: 69990,
+        flipkart: 70500,
+        official: 68990,
+        offline: '70,000-73,000',
+        type: 'new',
+        bestFor: ['gaming', 'development', 'design']
+    },
+    {
+        id: 11,
+        model: 'MSI GF63 Thin 11UC',
+        processor: 'Intel Core i5-11400H (2.7-4.5 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050)',
+        discount: '5% MSI Student',
+        brand: 'MSI',
+        year: 2023,
+        price: 69990,
+        amazon: 71990,
+        flipkart: 72500,
+        official: 69990,
+        offline: '71,000-74,000',
+        type: 'new',
+        bestFor: ['gaming', 'design', 'development']
+    },
+    {
+        id: 12,
+        model: 'HP 15s-fq5007TU',
+        processor: 'Intel Core i3-1215U (1.2-4.4 GHz, 6C/8T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'RAM+SSD',
+        webDev: '✅ Good',
+        appDev: '✅ Good',
+        aiDev: '⚠️ Basic',
+        videoEditing: '⚠️ Basic',
+        gaming: '⚠️ Very Limited',
+        discount: '10% HP Education',
+        brand: 'HP',
+        year: 2023,
+        price: 38990,
+        amazon: 39990,
+        flipkart: 40500,
+        official: 38990,
+        offline: '40,000-42,000',
+        type: 'new',
+        bestFor: ['general', 'office', 'basic coding']
+    },
+    {
+        id: 13,
+        model: 'Lenovo IdeaPad Slim 5 82R9006TIN',
+        processor: 'AMD Ryzen 5 7530U (2.0-4.5 GHz, 6C/12T)',
+        ram: '16GB LPDDR4X',
+        storage: '512GB SSD',
+        expandable: 'SSD only',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Radeon 660M)',
+        discount: '12% Lenovo Portal',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 55990,
+        amazon: 56990,
+        flipkart: 57500,
+        official: 55990,
+        offline: '57,000-59,000',
+        type: 'new',
+        bestFor: ['coding', 'multitasking', 'light design']
+    },
+    {
+        id: 14,
+        model: 'Dell Vostro 3520',
+        processor: 'Intel Core i5-1235U (1.3-4.4 GHz, 10C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '10% Dell University',
+        brand: 'Dell',
+        year: 2023,
+        price: 54990,
+        amazon: 55990,
+        flipkart: 56500,
+        official: 54990,
+        offline: '56,000-58,000',
+        type: 'new',
+        bestFor: ['business', 'coding', 'general']
+    },
+    {
+        id: 15,
+        model: 'ASUS VivoBook 16X M1603QA',
+        processor: 'AMD Ryzen 5 5600H (3.3-4.2 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'SSD only',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '8% ASUS Education',
+        brand: 'ASUS',
+        year: 2023,
+        price: 52990,
+        amazon: 53990,
+        flipkart: 54500,
+        official: 52990,
+        offline: '54,000-56,000',
+        type: 'new',
+        bestFor: ['coding', 'multimedia', 'general']
+    },
+    {
+        id: 16,
+        model: 'Acer Swift 3 SF314-43',
+        processor: 'AMD Ryzen 7 5700U (1.8-4.3 GHz, 8C/16T)',
+        ram: '16GB LPDDR4X',
+        storage: '512GB SSD',
+        expandable: 'SSD only',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 8)',
+        discount: '7% Acer Education',
+        brand: 'Acer',
+        year: 2023,
+        price: 61990,
+        amazon: 62990,
+        flipkart: 63500,
+        official: 61990,
+        offline: '63,000-65,000',
+        type: 'new',
+        bestFor: ['coding', 'multitasking', 'portability']
+    },
+    {
+        id: 17,
+        model: 'HP Envy x360 13-ay0088AU',
+        processor: 'AMD Ryzen 5 5600U (2.3-4.2 GHz, 6C/12T)',
+        ram: '16GB LPDDR4X',
+        storage: '512GB SSD',
+        expandable: 'No',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '10% HP Education',
+        brand: 'HP',
+        year: 2023,
+        price: 74990,
+        amazon: 76990,
+        flipkart: 77500,
+        official: 74990,
+        offline: '76,000-78,000',
+        type: 'new',
+        bestFor: ['design', 'multimedia', '2-in-1']
+    },
+    {
+        id: 18,
+        model: 'Lenovo ThinkPad E14 Gen 4',
+        processor: 'Intel Core i5-1235U (1.3-4.4 GHz, 10C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '15% Lenovo Campus',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 68990,
+        amazon: 69990,
+        flipkart: 70500,
+        official: 68990,
+        offline: '70,000-72,000',
+        type: 'new',
+        bestFor: ['business', 'coding', 'durability']
+    },
+    {
+        id: 19,
+        model: 'ASUS ROG Strix G15 G513RC',
+        processor: 'AMD Ryzen 7 6800H (3.2-4.7 GHz, 8C/16T)',
+        ram: '16GB DDR5',
+        storage: '1TB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Excellent',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3050)',
+        discount: '8% ASUS Education',
+        brand: 'ASUS',
+        year: 2023,
+        price: 84990,
+        amazon: 86990,
+        flipkart: 87500,
+        official: 84990,
+        offline: '86,000-88,000',
+        type: 'new',
+        bestFor: ['gaming', 'design', 'development']
+    },
+    {
+        id: 20,
+        model: 'Dell Inspiron 14 5420',
+        processor: 'Intel Core i5-1240P (1.7-4.4 GHz, 12C/16T)',
+        ram: '16GB LPDDR4X',
+        storage: '512GB SSD',
+        expandable: 'SSD only',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Iris Xe)',
+        discount: '10% Dell University',
+        brand: 'Dell',
+        year: 2023,
+        price: 67990,
+        amazon: 68990,
+        flipkart: 69500,
+        official: 67990,
+        offline: '69,000-71,000',
+        type: 'new',
+        bestFor: ['coding', 'business', 'portability']
+    },
+    {
+        id: 21,
+        model: 'HP Pavilion Aero 13-be2018AU',
+        processor: 'AMD Ryzen 7 7735U (2.7-4.75 GHz, 8C/16T)',
+        ram: '16GB LPDDR5',
+        storage: '1TB SSD',
+        expandable: 'No',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Excellent',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Good Gaming (Radeon 680M)',
+        discount: '10% HP Education',
+        brand: 'HP',
+        year: 2023,
+        price: 84990,
+        amazon: 86990,
+        flipkart: 87500,
+        official: 84990,
+        offline: '86,000-88,000',
+        type: 'new',
+        bestFor: ['ultraportable', 'coding', 'design']
+    },
+    {
+        id: 22,
+        model: 'Lenovo Yoga 7 14ACN6',
+        processor: 'AMD Ryzen 5 5600U (2.3-4.2 GHz, 6C/12T)',
+        ram: '16GB LPDDR4X',
+        storage: '512GB SSD',
+        expandable: 'No',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '12% Lenovo Portal',
+        brand: 'Lenovo',
+        year: 2023,
+        price: 74990,
+        amazon: 76990,
+        flipkart: 77500,
+        official: 74990,
+        offline: '76,000-78,000',
+        type: 'new',
+        bestFor: ['2-in-1', 'design', 'portability']
+    },
+    {
+        id: 23,
+        model: 'ASUS ZenBook 14 UX3402ZA',
+        processor: 'Intel Core i7-1260P (2.1-4.7 GHz, 12C/16T)',
+        ram: '16GB LPDDR5',
+        storage: '1TB SSD',
+        expandable: 'No',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Excellent',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Good Gaming (Iris Xe)',
+        discount: '8% ASUS Education',
+        brand: 'ASUS',
+        year: 2023,
+        price: 94990,
+        amazon: 96990,
+        flipkart: 97500,
+        official: 94990,
+        offline: '96,000-98,000',
+        type: 'new',
+        bestFor: ['premium', 'design', 'productivity']
+    },
+    
+    // Refurbished Laptops (24-30)
+    {
+        id: 24,
+        model: 'Lenovo Legion 5 (Refurb)',
+        processor: 'AMD Ryzen 5 4600H (3.0-4.0 GHz, 6C/12T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (GTX 1650Ti)',
+        discount: '12% Lenovo Outlet',
+        brand: 'Lenovo',
+        year: 2021,
+        price: 43999,
+        amazon: 44999,
+        flipkart: 45500,
+        official: 43999,
+        offline: '45,000-47,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'coding', 'design'],
+        warranty: '6 Months'
+    },
+    {
+        id: 25,
+        model: 'Dell G5 15 5500 (Refurb)',
+        processor: 'Intel Core i5-10300H (2.5-4.5 GHz, 4C/8T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Very Good Gaming (GTX 1650)',
+        discount: '10% Dell Outlet',
+        brand: 'Dell',
+        year: 2020,
+        price: 41999,
+        amazon: 42999,
+        flipkart: 43500,
+        official: 41999,
+        offline: '43,000-45,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'coding', 'multimedia'],
+        warranty: '6 Months'
+    },
+    {
+        id: 26,
+        model: 'HP Omen 15-ek0016TX (Refurb)',
+        processor: 'Intel Core i7-10750H (2.6-5.0 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '1TB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Excellent',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 2060)',
+        discount: '15% HP Renew',
+        brand: 'HP',
+        year: 2020,
+        price: 69999,
+        amazon: 71999,
+        flipkart: 72500,
+        official: 69999,
+        offline: '71,000-74,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'development', 'design'],
+        warranty: '1 Year'
+    },
+    {
+        id: 27,
+        model: 'ASUS TUF A15 FA506IU (Refurb)',
+        processor: 'AMD Ryzen 5 4600H (3.0-4.0 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (GTX 1660Ti)',
+        discount: '10% ASUS Official Refurb',
+        brand: 'ASUS',
+        year: 2020,
+        price: 54999,
+        amazon: 55999,
+        flipkart: 56500,
+        official: 54999,
+        offline: '56,000-58,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'coding', 'multitasking'],
+        warranty: '6 Months'
+    },
+    {
+        id: 28,
+        model: 'Acer Predator Helios 300 PH315-53 (Refurb)',
+        processor: 'Intel Core i7-10750H (2.6-5.0 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '1TB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Excellent',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 2060)',
+        discount: '12% Acer Recertified',
+        brand: 'Acer',
+        year: 2020,
+        price: 65999,
+        amazon: 67999,
+        flipkart: 68500,
+        official: 65999,
+        offline: '67,000-69,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'development', 'design'],
+        warranty: '1 Year'
+    },
+    {
+        id: 29,
+        model: 'MSI GF65 Thin 10UE (Refurb)',
+        processor: 'Intel Core i5-10500H (2.5-4.5 GHz, 6C/12T)',
+        ram: '16GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Excellent Gaming (RTX 3060)',
+        discount: '10% MSI Official Outlet',
+        brand: 'MSI',
+        year: 2021,
+        price: 68999,
+        amazon: 69999,
+        flipkart: 70500,
+        official: 68999,
+        offline: '70,000-72,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'development', 'multimedia'],
+        warranty: '1 Year'
+    },
+    {
+        id: 30,
+        model: 'Lenovo IdeaPad Gaming 3 15ARH05 (Refurb)',
+        processor: 'AMD Ryzen 5 4600H (3.0-4.0 GHz, 6C/12T)',
+        ram: '8GB DDR4',
+        storage: '512GB SSD',
+        expandable: 'Both',
+        webDev: '✅ Excellent',
+        appDev: '✅ Excellent',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Very Good Gaming (GTX 1650)',
+        discount: '15% Lenovo Outlet',
+        brand: 'Lenovo',
+        year: 2020,
+        price: 42999,
+        amazon: 43999,
+        flipkart: 44500,
+        official: 42999,
+        offline: '44,000-46,000',
+        type: 'refurbished',
+        bestFor: ['gaming', 'coding', 'general'],
+        warranty: '6 Months'
+    }
+];
+
+// Gaming Performance Data
+const gamingPerformance = [
+    {
+        category: 'No Gaming',
+        level: 'Cannot run modern games',
+        processor: 'Below i3-10th Gen',
+        ram: '4GB',
+        graphics: 'Intel UHD 600',
+        games: 'Basic 2D games only',
+        settings: 'N/A',
+        fps: 'N/A'
+    },
+    {
+        category: 'Very Limited',
+        level: 'Ancient games only',
+        processor: 'i3-10th Gen',
+        ram: '4-8GB',
+        graphics: 'Intel UHD 620',
+        games: 'Solitaire, Minesweeper',
+        settings: 'Low',
+        fps: '30+ FPS'
+    },
+    {
+        category: 'Light Gaming',
+        level: 'Casual & older games',
+        processor: 'i3-11th Gen / Ryzen 3 5000',
+        ram: '8GB',
+        graphics: 'Intel Iris Xe / Vega 7',
+        games: 'Minecraft, CS:GO, Rocket League',
+        settings: 'Low-Medium',
+        fps: '30-45 FPS'
+    },
+    {
+        category: 'Medium Gaming',
+        level: 'Indie & competitive games',
+        processor: 'i5-11th Gen / Ryzen 5 5000',
+        ram: '8GB',
+        graphics: 'GTX 1650 / RTX 2050',
+        games: 'Valorant, Fortnite, Apex Legends',
+        settings: 'Medium',
+        fps: '45-60 FPS'
+    },
+    {
+        category: 'Good Gaming',
+        level: 'Modern games',
+        processor: 'i5-12th Gen / Ryzen 5 6000',
+        ram: '8-16GB',
+        graphics: 'GTX 1650Ti / RTX 2050',
+        games: 'Call of Duty, GTA V, Cyberpunk 2077',
+        settings: 'Medium-High',
+        fps: '60+ FPS'
+    },
+    {
+        category: 'Excellent Gaming',
+        level: 'All games high settings',
+        processor: 'i7 / Ryzen 7',
+        ram: '16GB',
+        graphics: 'RTX 3060+ / RX 6600M+',
+        games: 'All AAA titles',
+        settings: 'High-Ultra',
+        fps: '60-120+ FPS'
+    }
+];
+
+// Student Discounts Data
+const studentDiscounts = [
+    {
+        brand: 'HP',
+        portal: 'HP Education Store',
+        discount: '5-12%',
+        verification: 'Student ID + Email',
+        benefits: 'Extended warranty, free shipping',
+        link: 'education.hp.com'
+    },
+    {
+        brand: 'Dell',
+        portal: 'Dell Education',
+        discount: '8-15%',
+        verification: 'Educational email',
+        benefits: 'Priority support, bulk discounts',
+        link: 'dell.com/learn/student'
+    },
+    {
+        brand: 'Lenovo',
+        portal: 'Lenovo Student',
+        discount: '5-12%',
+        verification: 'Student verification',
+        benefits: 'Gaming laptop discounts',
+        link: 'lenovo.com/students'
+    },
+    {
+        brand: 'ASUS',
+        portal: 'ASUS Education',
+        discount: '3-8%',
+        verification: 'Student ID required',
+        benefits: 'ROG gaming series included',
+        link: 'asus.com/in/education'
+    },
+    {
+        brand: 'Acer',
+        portal: 'Acer Education',
+        discount: '5-10%',
+        verification: 'University email',
+        benefits: 'Predator gaming discounts',
+        link: 'acer.com/education'
+    },
+    {
+        brand: 'MSI',
+        portal: 'MSI Student Program',
+        discount: '5-7%',
+        verification: 'Student verification',
+        benefits: 'Gaming laptop focus',
+        link: 'msi.com/student'
+    }
+];
+
+// DOM Elements
+const newLaptopsBody = document.getElementById('new-laptops-body');
+const refurbishedLaptopsBody = document.getElementById('refurbished-laptops-body');
+const gamingTableBody = document.querySelector('.gaming-table tbody');
+const discountCardsContainer = document.querySelector('.discount-cards');
+const applyFiltersBtn = document.getElementById('apply-filters');
+const newSearchInput = document.getElementById('new-search');
+const refurbishedSearchInput = document.getElementById('refurbished-search');
+
+// Filtered data
+let filteredNewLaptops = [];
+let filteredRefurbishedLaptops = [];
+function init() {
+    // Initial render
+    renderLaptops();
+    renderGamingPerformance();
+    renderStudentDiscounts();
+    
+    // Setup event listeners
+    setupEventListeners();
+    
+    // Setup intersection observer for nav highlighting
+    setupIntersectionObserver();
+    
+    // Setup laptop details buttons
+    setupLaptopDetailsButtons();
+    
+    // Initialize requirements analysis
+
+// Setup event listeners
+function setupEventListeners() {
+    // Search functionality with debouncing and loading state
+    function setupSearch() {
+        const searchInput = document.getElementById('new-search');
+        const searchButton = document.getElementById('new-search-btn');
+        const searchRefurbishedInput = document.getElementById('refurbished-search');
+        const searchRefurbishedButton = document.getElementById('refurbished-search-btn');
+        
+        // Show loading state
+        const showLoading = (container) => {
+            const loading = document.createElement('div');
+            loading.className = 'loading-state';
+            loading.innerHTML = '<div class="spinner"></div><p>Searching...</p>';
+            container.appendChild(loading);
+            return loading;
+        };
+        
+        // Perform search with debouncing
+        const performSearch = (searchTerm, containerId) => {
+            const container = document.querySelector(containerId);
+            const loading = showLoading(container);
+            
+            // Use requestAnimationFrame to ensure UI updates
+            requestAnimationFrame(() => {
+                const rows = container.querySelectorAll('tbody tr');
+                let visibleCount = 0;
+                
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    const isVisible = searchTerm === '' || text.includes(searchTerm);
+                    row.style.display = isVisible ? '' : 'none';
+                    if (isVisible) visibleCount++;
+                });
+                
+                // Show no results message if needed
+                const noResults = container.querySelector('.no-results');
+                if (visibleCount === 0 && searchTerm !== '') {
+                    if (!noResults) {
+                        const message = document.createElement('tr');
+                        message.className = 'no-results';
+                        message.innerHTML = `<td colspan="11" style="text-align: center; padding: 2rem;">No laptops found matching "${searchTerm}"</td>`;
+                        container.querySelector('tbody').appendChild(message);
+                    }
+                } else if (noResults) {
+                    noResults.remove();
+                }
+            };
+            
+            // Debounced search functions
+            const debouncedSearch = debounce((e) => {
+                performSearch(e.target.value.toLowerCase(), '#new-laptops .table-container');
+            }, 300);
+            
+            const debouncedSearchRefurbished = debounce((e) => {
+                performSearch(e.target.value.toLowerCase(), '#refurbished .table-container');
+            }, 300);
+            
+            // Event listeners for search
+            if (searchInput) {
+                searchInput.addEventListener('input', debouncedSearch);
+                searchInput.addEventListener('search', (e) => {
+                    if (e.target.value === '') performSearch('', '#new-laptops .table-container');
+                });
+            }
+            
+            if (searchButton) {
+                searchButton.addEventListener('click', () => {
+                    performSearch(searchInput.value.toLowerCase(), '#new-laptops .table-container');
+                });
+            }
+            
+            if (searchRefurbishedInput) {
+                searchRefurbishedInput.addEventListener('input', debouncedSearchRefurbished);
+                searchRefurbishedInput.addEventListener('search', (e) => {
+                    if (e.target.value === '') performSearch('', '#refurbished .table-container');
+                });
+            }
+            
+            if (searchRefurbishedButton) {
+                searchRefurbishedButton.addEventListener('click', () => {
+                    performSearch(searchRefurbishedInput.value.toLowerCase(), '#refurbished .table-container');
+                });
+            }
+        }
+        
+        setupSearch();
+    }
+    
+    // Initialize the application with performance optimizations
+    function init() {
+        // Show loading state
+        const mainContent = document.querySelector('main');
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'loading-overlay';
+        loadingOverlay.innerHTML = `
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p>Loading Laptop Data...</p>
+            </div>
+        `;
+        document.body.appendChild(loadingOverlay);
+        
+        // Use requestIdleCallback to schedule non-critical work
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(() => {
+                renderLaptops();
+                setupEventListeners();
+                
+                // Defer non-critical renders
+                setTimeout(() => {
+                    renderGamingTable();
+                    renderDiscountCards();
+                    setupRequirementsForm();
+                    
+                    // Initialize price analysis if the section exists
+                    if (document.getElementById('price-analysis')) {
+                        priceAnalysis.init();
+                    }
+                    
+                    // Remove loading overlay when everything is ready
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => loadingOverlay.remove(), 300);
+                }, 100);
+            }, { timeout: 2000 });
+        } else {
+            // Fallback for browsers that don't support requestIdleCallback
+            setTimeout(() => {
+                renderLaptops();
+                setupEventListeners();
+                renderGamingTable();
+                renderDiscountCards();
+                setupRequirementsForm();
+                
+                if (document.getElementById('price-analysis')) {
+                    priceAnalysis.init();
+                }
+                
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => loadingOverlay.remove(), 300);
+            }, 100);
+        }
+        
+        // Optimize scroll performance
+        setupSmoothScroll();
+        
+        // Initialize offline status
+        initOfflineStatus();
+    }
+    
+    // Initialize offline status functionality
+    function initOfflineStatus() {
+        // Create offline banner if it doesn't exist
+        if (!document.getElementById('offline-banner')) {
+            const banner = document.createElement('div');
+            banner.id = 'offline-banner';
+            banner.className = 'offline-banner';
+            banner.innerHTML = `
+                <i class="fas fa-wifi-slash"></i>
+                <span>You are currently offline. Some features may be limited.</span>
+                <button id="refresh-button" class="btn btn-sm" style="margin-left: 10px;">
+                    <i class="fas fa-sync-alt"></i> Try Again
+                </button>
+            `;
+            document.body.appendChild(banner);
+            
+            // Add event listener for the refresh button
+            const refreshButton = document.getElementById('refresh-button');
+            if (refreshButton) {
+                refreshButton.addEventListener('click', () => {
+                    window.location.reload();
+                });
+            }
+        }
+        
+        // Update online status
+        function updateOnlineStatus() {
+            const offlineBanner = document.getElementById('offline-banner');
+            if (!offlineBanner) return;
+            
+            if (navigator.onLine) {
+                // We're online
+                offlineBanner.style.display = 'none';
+                
+                // If we just came back online, refresh the data
+                if (window.wasOffline) {
+                    window.location.reload();
+                }
+            } else {
+                // We're offline
+                offlineBanner.style.display = 'block';
+                window.wasOffline = true;
+            }
+        }
+        
+        // Listen for online/offline events
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        
+        // Initial check
+        updateOnlineStatus();
+    }
+    
+    // Show a toast notification
+    function showToast(message, type = 'info', duration = 3000) {
+        // Don't show toasts if we're offline and it's not an error
+        if (!navigator.onLine && type !== 'error') {
+            return;
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+            <i class="fas fa-${type === 'error' ? 'times-circle' : type === 'success' ? 'check-circle' : 'info-circle'}"></i>
+            <span>${message}</span>
+            <button class="toast-close">&times;</button>
+        `;
+        document.body.appendChild(toast);
+        
+        // Auto-remove toast after duration
+        setTimeout(() => {
+            toast.remove();
+        }, duration);
+        
+        // Add event listener for close button
+        const closeButton = toast.querySelector('.toast-close');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                toast.remove();
+            });
+        }
+    }
+    
+    // Smooth scroll with performance optimization
+    function setupSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Use requestAnimationFrame for smooth scrolling
+                    const start = window.pageYOffset;
+                    const targetY = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    const distance = targetY - start;
+                    const duration = 800; // ms
+                    let startTime = null;
+                    
+                    function scrollStep(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        const progress = timestamp - startTime;
+                        const percentage = Math.min(progress / duration, 1);
+                        
+                        // Easing function for smooth scrolling
+                        const easeInOutCubic = t => t < 0.5 
+                            ? 4 * t * t * t 
+                            : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+                        
+                        window.scrollTo(0, start + distance * easeInOutCubic(percentage));
+                        
+                        if (progress < duration) {
+                            window.requestAnimationFrame(scrollStep);
+                        }
+                    }
+                    
+                    window.requestAnimationFrame(scrollStep);
+                    
+                    // Update URL without scrolling
+                    history.pushState(null, null, targetId);
+                }
+            });
+        });
+    }
+    
+    // Performance optimization variables
+    let isScrolling = false;
+    let scrollTimeout;
+    let searchTimeout;
+    
+    // Debounce function for search and other events
+    function debounce(func, wait, immediate = false) {
+        let timeout;
+        return function executedFunction(...args) {
+            const context = this;
+            const later = () => {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            const callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    }
+    
+    // Throttle function for scroll/resize events
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    }
+    
+    // Handle scroll events with throttling
+    function handleScroll() {
+        // Add/remove scroll class for header
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Lazy load images when they come into view
+        lazyLoadImages();
+    }
+    
+    // Handle window resize with debouncing
+    function handleResize() {
+        // Update any responsive elements here
+        const tables = document.querySelectorAll('.table-container');
+        tables.forEach(table => {
+            table.style.maxHeight = `${window.innerHeight - 200}px`;
+        });
+    }
+    
+    // Lazy load images
+    function lazyLoadImages() {
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback for browsers without IntersectionObserver
+            lazyImages.forEach(img => {
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+            });
+        }
+    }
+    
+    // Initialize the application
+    document.addEventListener('DOMContentLoaded', () => {
+        // Use requestIdleCallback if available, otherwise use setTimeout
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(init, { timeout: 2000 });
+        } else {
+            // Fallback for browsers that don't support requestIdleCallback
+            setTimeout(init, 0);
+        }
+        
+        // Add passive event listeners for better scroll performance
+        const passiveOptions = { passive: true };
+        window.addEventListener('scroll', throttle(handleScroll, 100), passiveOptions);
+        window.addEventListener('resize', debounce(handleResize, 250), passiveOptions);
+    });
+    
+    // Check if this is a reload to show a refresh prompt
+    if (window.performance) {
+        if (performance.navigation.type === 1) {
+            // Page was reloaded, show a toast if we have new content
+            showToast('Page refreshed with latest content', 'success');
+        }
+    }

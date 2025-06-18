@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - Laptop Selection Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        
+        .offline-icon {
+            font-size: 4rem;
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        .offline-title {
+            font-size: 2rem;
+            color: #343a40;
+            margin-bottom: 1rem;
+        }
+        
+        .offline-message {
+            color: #6c757d;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.6rem;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .btn i {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">
+            <i class="fas fa-wifi-slash"></i>
+        </div>
+        <h1 class="offline-title">You're Offline</h1>
+        <p class="offline-message">
+            It seems you're not connected to the internet. Some features may not be available. 
+            Please check your connection and try again.
+        </p>
+        <button class="btn" onclick="window.location.reload()">
+            <i class="fas fa-sync-alt"></i> Try Again
+        </button>
+    </div>
+    
+    <script>
+        // Check network status and reload when online
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+        
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

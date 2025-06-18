@@ -2,10 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laptop Suggestions for Students & Developers</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Find your perfect laptop between ₹25,000 - ₹50,000 with detailed comparisons and recommendations.">
+    <meta name="keywords" content="laptop, guide, student, developer, comparison, price, specs">
+    <meta name="author" content="Laptop Selection Guide">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Laptop Guide">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="laptop.png" type="image/png">
+    <link rel="shortcut icon" href="laptop.png" type="image/png">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="images/icon-167x167.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="msapplication-navbutton-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#2563eb">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Local Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <title>Laptop Suggestions for Students & Developers</title>
 </head>
 <body>
     <header class="header">
@@ -18,6 +56,7 @@
                     <li><a href="#new-laptops">New Laptops</a></li>
                     <li><a href="#refurbished">Refurbished</a></li>
                     <li><a href="#requirements">Requirements</a></li>
+                    <li><a href="#price-analysis">Price Analysis</a></li>
                     <li><a href="#gaming">Gaming</a></li>
                     <li><a href="#discounts">Discounts</a></li>
                 </ul>
@@ -210,8 +249,274 @@
                 <!-- Discount cards will be loaded by JavaScript -->
             </div>
         </section>
-    </main>
 
+        <section id="requirements-analysis" class="section">
+            <h2>Find Your Perfect Laptop</h2>
+            <p class="section-subtitle">Answer a few questions to get personalized laptop recommendations</p>
+            
+            <form id="requirements-form" class="requirements-form">
+                <div class="form-group">
+                    <h3>1. Primary Usage</h3>
+                    <p>Select all that apply:</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="webDev">
+                            <span class="checkmark"></span>
+                            Web Development
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="appDev">
+                            <span class="checkmark"></span>
+                            App Development
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="aiDev">
+                            <span class="checkmark"></span>
+                            AI/ML Work
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="videoEditing">
+                            <span class="checkmark"></span>
+                            Video Editing
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="gaming">
+                            <span class="checkmark"></span>
+                            Gaming
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="usage" value="general">
+                            <span class="checkmark"></span>
+                            General Use
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>2. Budget Range</h3>
+                    <div class="range-slider">
+                        <div class="range-labels">
+                            <span>₹25,000</span>
+                            <span>₹1,50,000+</span>
+                        </div>
+                        <input type="range" id="budget-slider" min="25000" max="150000" step="5000" value="50000">
+                        <div class="range-value">Selected: ₹<span id="budget-value">50,000</span></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>3. Preferred Brands</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="HP" checked>
+                            <span class="checkmark"></span>
+                            HP
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="Dell" checked>
+                            <span class="checkmark"></span>
+                            Dell
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="Lenovo" checked>
+                            <span class="checkmark"></span>
+                            Lenovo
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="ASUS" checked>
+                            <span class="checkmark"></span>
+                            ASUS
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="Acer" checked>
+                            <span class="checkmark"></span>
+                            Acer
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="brands" value="MSI" checked>
+                            <span class="checkmark"></span>
+                            MSI
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>4. Performance Priority</h3>
+                    <div class="priority-container">
+                        <div class="priority-option">
+                            <input type="radio" id="battery" name="priority" value="battery" checked>
+                            <label for="battery">
+                                <i class="fas fa-battery-three-quarters"></i>
+                                <span>Battery Life</span>
+                            </label>
+                        </div>
+                        <div class="priority-option">
+                            <input type="radio" id="performance" name="priority" value="performance">
+                            <label for="performance">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Performance</span>
+                            </label>
+                        </div>
+                        <div class="priority-option">
+                            <input type="radio" id="portability" name="priority" value="portability">
+                            <label for="portability">
+                                <i class="fas fa-laptop"></i>
+                                <span>Portability</span>
+                            </label>
+                        </div>
+                        <div class="priority-option">
+                            <input type="radio" id="display" name="priority" value="display">
+                            <label for="display">
+                                <i class="fas fa-desktop"></i>
+                                <span>Display Quality</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h3>5. Required Ports & Connectivity</h3>
+                    <div class="checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="ports" value="usb-c">
+                            <span class="checkmark"></span>
+                            USB-C/Thunderbolt
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="ports" value="hdmi">
+                            <span class="checkmark"></span>
+                            HDMI
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="ports" value="ethernet">
+                            <span class="checkmark"></span>
+                            Ethernet
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="ports" value="sd-card">
+                            <span class="checkmark"></span>
+                            SD Card Reader
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="ports" value="wifi6">
+                            <span class="checkmark"></span>
+                            WiFi 6
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="reset-btn" class="btn btn-secondary">Reset</button>
+                    <button type="submit" id="recommend-btn" class="btn btn-primary">Get Recommendations</button>
+                </div>
+            </form>
+
+            <div id="recommendations-result" class="recommendations-result">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+
+
+        <!-- Price Analysis Section -->
+        <section id="price-analysis" class="section">
+            <h2>Price Analysis & Tracking</h2>
+            <p class="section-subtitle">Compare prices across platforms and track price history</p>
+            
+            <!-- Price Analysis Filters -->
+            <div class="price-filters">
+                <div class="filter-group">
+                    <label for="price-range">Price Range:</label>
+                    <select id="price-range" class="filter-select">
+                        <option value="all">All Prices</option>
+                        <option value="25-35">₹25,000 - ₹35,000</option>
+                        <option value="35-45">₹35,001 - ₹45,000</option>
+                        <option value="45-55">₹45,001 - ₹55,000</option>
+                        <option value="55+">Above ₹55,000</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="brand-filter">Brand:</label>
+                    <select id="brand-filter" class="filter-select">
+                        <option value="all">All Brands</option>
+                        <option value="hp">HP</option>
+                        <option value="dell">Dell</option>
+                        <option value="lenovo">Lenovo</option>
+                        <option value="asus">ASUS</option>
+                        <option value="acer">Acer</option>
+                        <option value="msi">MSI</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="time-period">Time Period:</label>
+                    <select id="time-period" class="filter-select">
+                        <option value="1m">Last Month</option>
+                        <option value="3m">3 Months</option>
+                        <option value="6m" selected>6 Months</option>
+                    </select>
+                </div>
+                
+                <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+                <button id="reset-filters" class="btn btn-outline">Reset</button>
+            </div>
+            
+            <!-- Price Trend Charts -->
+            <div class="chart-container">
+                <h3>Price Trends</h3>
+                <div class="chart-wrapper">
+                    <canvas id="price-trend-chart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Price Comparison Table -->
+            <div class="price-comparison">
+                <h3>Best Prices Across Platforms</h3>
+                <div class="table-responsive">
+                    <table id="price-comparison-table" class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Amazon</th>
+                                <th>Flipkart</th>
+                                <th>Official</th>
+                                <th>Offline</th>
+                                <th>Best Price</th>
+                                <th>Savings</th>
+                                <th>Price Alert</th>
+                            </tr>
+                        </thead>
+                        <tbody id="price-comparison-body">
+                            <!-- Filled by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Price to Performance Section -->
+            <div class="performance-section">
+                <h3>Price to Performance Ratio</h3>
+                <div class="chart-wrapper">
+                    <canvas id="performance-chart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Price Alert Signup -->
+            <div class="price-alert">
+                <h3>Get Price Drop Alerts</h3>
+                <div class="alert-form">
+                    <input type="email" id="alert-email" placeholder="Enter your email" class="alert-input">
+                    <select id="alert-laptop" class="alert-select">
+                        <option value="">Select a laptop to track</option>
+                        <!-- Filled by JavaScript -->
+                    </select>
+                    <input type="number" id="target-price" placeholder="Target price (₹)" class="alert-input">
+                    <button id="set-alert" class="btn btn-primary">Set Price Alert</button>
+                </div>
+                <p class="alert-note">We'll notify you when the price drops below your target.</p>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
@@ -220,6 +525,69 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Register the service worker with the correct scope
+                navigator.serviceWorker.register('service-worker.js', { 
+                    scope: './' // This should be the root of your app
+                })
+                .then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    // Check for updates
+                    registration.update();
+                })
+                .catch(function(error) {
+                    console.error('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+    
+    <!-- Main Application Script -->
+    <script type="module" src="js/app.js"></script>
+    
+    <script type="module">
+        // PWA installation prompt
+        let deferredPrompt;
+        const installButton = document.getElementById('install-button');
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            // Show the install button if it exists
+            if (installButton) {
+                installButton.style.display = 'block';
+            }
+        });
+        
+        // Handle install button click
+        if (installButton) {
+            installButton.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log(`User response to the install prompt: ${outcome}`);
+                // We've used the prompt, and can't use it again, throw it away
+                deferredPrompt = null;
+                // Hide the install button
+                installButton.style.display = 'none';
+            });
+        }
+        
+        // Track successful installation
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            if (installButton) {
+                installButton.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

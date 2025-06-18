@@ -1,0 +1,75 @@
+{
+  "name": "Laptop Selection Guide",
+  "short_name": "Laptop Guide",
+  "description": "Find your perfect laptop between ₹25,000 - ₹50,000 with detailed comparisons and recommendations.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null,
+  "prefer_related_applications": false,
+  "categories": ["shopping", "technology", "education"],"shortcuts": [
+    {
+      "name": "View New Laptops",
+      "short_name": "New",
+      "description": "Browse the latest laptop models",
+      "url": "/#new-laptops"
+    },
+    {
+      "name": "Find by Requirements",
+      "short_name": "Requirements",
+      "description": "Find the perfect laptop based on your needs",
+      "url": "/#requirements"
+    },
+    {
+      "name": "Price Analysis",
+      "short_name": "Prices",
+      "description": "Compare prices and track deals",
+      "url": "/#price-analysis"
+    }
+  ]
+}
