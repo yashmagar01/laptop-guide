@@ -435,3 +435,451 @@ tr:hover {
 .section:nth-child(3) { animation-delay: 0.3s; }
 .section:nth-child(4) { animation-delay: 0.4s; }
 .section:nth-child(5) { animation-delay: 0.5s; }
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.active {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+    overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--light-text);
+    transition: color 0.2s ease;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--danger);
+}
+
+.modal-header {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--background);
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.modal-subtitle {
+    margin: 0.25rem 0 0;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.modal-body {
+    padding: 1.5rem 2rem;
+}
+
+.modal-columns {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-column {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-column h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.specs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.specs-list li:last-child {
+    border-bottom: none;
+}
+
+.specs-list .spec-label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.specs-list .spec-value {
+    color: var(--light-text);
+    text-align: right;
+}
+
+.performance-grid, .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.performance-item, .pricing-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    background-color: var(--background);
+    border-radius: var(--radius);
+    align-items: center;
+}
+
+.performance-label, .pricing-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.performance-value, .pricing-value {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+.status-excellent {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-good {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-basic {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-poor {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.additional-info {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.additional-info li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.additional-info li i {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+    width: 1.5rem;
+    text-align: center;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-columns {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem auto;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-header {
+        padding: 1rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .performance-item, .pricing-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+/* Table Enhancements */
+.laptops-table {
+    --brand-logo-size: 32px;
+    --status-cell-width: 80px;
+    --action-cell-width: 100px;
+    --price-cell-width: 100px;
+    --gaming-cell-width: 120px;
+    --brand-cell-width: 60px;
+}
+
+/* Brand Logos */
+.brand-logo {
+    width: var(--brand-logo-size);
+    height: var(--brand-logo-size);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.brand-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Brand-specific logos */
+.brand-hp { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg'); }
+.brand-lenovo { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/01/Lenovo_logo_2015.svg'); }
+.brand-dell { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/18/Dell_logo_2016.svg'); }
+.brand-asus { background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/ASUS_Logo.svg'); }
+.brand-acer { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Acer_2011.svg'); }
+.brand-msi { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f5/MSI_logo.svg'); }
+.brand-apple { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg'); }
+.brand-samsung { background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg'); }
+
+/* Table Cell Styling */
+.brand-cell {
+    width: var(--brand-cell-width);
+    text-align: center;
+    padding: 0.5rem !important;
+}
+
+.model-cell {
+    min-width: 200px;
+    font-weight: 500;
+}
+
+.status-cell {
+    width: var(--status-cell-width);
+    text-align: center;
+    font-weight: 500;
+    padding: 0.5rem !important;
+    border-radius: 4px;
+}
+
+.gaming-cell {
+    width: var(--gaming-cell-width);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price-cell {
+    width: var(--price-cell-width);
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+    padding-right: 1rem !important;
+}
+
+.actions {
+    width: var(--action-cell-width);
+    text-align: center;
+}
+
+/* Status Colors */
+.status-excellent {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-good {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-basic {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status-poor {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Responsive Table */
+@media (max-width: 1200px) {
+    .laptops-table {
+        --status-cell-width: 70px;
+        --action-cell-width: 90px;
+        --price-cell-width: 90px;
+        --gaming-cell-width: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .laptops-table {
+        --brand-logo-size: 28px;
+        --brand-cell-width: 50px;
+    }
+    
+    .model-cell {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .laptops-table {
+        --brand-logo-size: 24px;
+        --status-cell-width: 60px;
+        --action-cell-width: 80px;
+        --price-cell-width: 80px;
+        --gaming-cell-width: 90px;
+    }
+    
+    .model-cell {
+        min-width: 160px;
+    }
+    
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Hover effects */
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:hover {
+    background-color: rgba(37, 99, 235, 0.05) !important;
+}
+
+/* Tooltip styles */
+[title] {
+    position: relative;
+    cursor: help;
+}
+
+[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+[title]:hover::after {
+    opacity: 1;
+    transition-delay: 0.3s;
+}

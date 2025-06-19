@@ -17,9 +17,6 @@
                     <li><a href="#recommendations">Top Picks</a></li>
                     <li><a href="#new-laptops">New Laptops</a></li>
                     <li><a href="#refurbished">Refurbished</a></li>
-                    <li><a href="#requirements">Requirements</a></li>
-                    <li><a href="#gaming">Gaming</a></li>
-                    <li><a href="#discounts">Discounts</a></li>
                 </ul>
             </nav>
         </div>
@@ -126,6 +123,7 @@
                 <table class="laptops-table" id="new-laptops-table">
                     <thead>
                         <tr>
+                            <th>Brand</th>
                             <th>Model</th>
                             <th>Processor</th>
                             <th>RAM</th>
@@ -136,7 +134,7 @@
                             <th>Video Edit</th>
                             <th>Gaming</th>
                             <th>Price (₹)</th>
-                            <th>Actions</th>
+                            <th class="actions">Actions</th>
                         </tr>
                     </thead>
                     <tbody id="new-laptops-body">
@@ -179,46 +177,95 @@
                 </table>
             </div>
         </section>
-
-        <!-- Gaming Performance Section -->
-        <section id="gaming" class="section">
-            <h2>Gaming Performance Guide</h2>
-            <div class="table-container">
-                <table class="gaming-table">
-                    <thead>
-                        <tr>
-                            <th>Gaming Category</th>
-                            <th>Performance Level</th>
-                            <th>Minimum Processor</th>
-                            <th>Minimum RAM</th>
-                            <th>Graphics Card</th>
-                            <th>Example Games</th>
-                            <th>Settings Quality</th>
-                            <th>FPS Range</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Gaming performance data will be loaded by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section id="student-discounts" class="section">
-            <h2>Student Discounts</h2>
-            <div class="discount-cards">
-                <!-- Discount cards will be loaded by JavaScript -->
-            </div>
-        </section>
     </main>
 
 
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Laptop Selection Guide. All prices are in Indian Rupees (₹).</p>
+            <p> 2024 Laptop Selection Guide. All prices are in Indian Rupees (₹).</p>
             <p>Note: Prices and availability are subject to change. Please verify with retailers before making a purchase.</p>
         </div>
     </footer>
+
+    <!-- Laptop Details Modal -->
+    <div id="laptop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-laptop-name"></h2>
+                <p class="modal-subtitle" id="modal-laptop-brand"></p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-columns">
+                    <div class="modal-column">
+                        <h3>Specifications</h3>
+                        <ul class="specs-list" id="modal-specs">
+                            <!-- Filled by JavaScript -->
+                        </ul>
+                        
+                        <h3>Performance</h3>
+                        <div class="performance-grid">
+                            <div class="performance-item">
+                                <span class="performance-label">Web Development</span>
+                                <span class="performance-value" id="web-dev"></span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">App Development</span>
+                                <span class="performance-value" id="app-dev"></span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">AI/ML</span>
+                                <span class="performance-value" id="ai-dev"></span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Video Editing</span>
+                                <span class="performance-value" id="video-edit"></span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Gaming</span>
+                                <span class="performance-value" id="gaming-perf"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-column">
+                        <h3>Pricing</h3>
+                        <div class="pricing-grid">
+                            <div class="pricing-item">
+                                <span class="pricing-label">Best Price</span>
+                                <span class="pricing-value" id="best-price"></span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Amazon</span>
+                                <span class="pricing-value" id="amazon-price"></span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Flipkart</span>
+                                <span class="pricing-value" id="flipkart-price"></span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Official Store</span>
+                                <span class="pricing-value" id="official-price"></span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Offline Price</span>
+                                <span class="pricing-value" id="offline-price"></span>
+                            </div>
+                        </div>
+                        
+                        <h3>Additional Info</h3>
+                        <ul class="additional-info" id="additional-info">
+                            <!-- Filled by JavaScript -->
+                        </ul>
+                        
+                        <div class="modal-actions">
+                            <button class="btn btn-primary" id="view-online">View Online</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,28 +1,40 @@
 // Complete Laptops Data
 const laptopsData = [
-    // New Laptops (1-23)
+    // New Laptops (1-5)
     {
         id: 1,
         model: 'HP Pavilion 15-eh1003AU',
         processor: 'AMD Ryzen 5 5500U (2.1-4.0 GHz, 6C/12T)',
         ram: '8GB DDR4',
         storage: '512GB SSD',
-        expandable: 'RAM+SSD',
+        expandable: '✅ RAM+SSD',
         webDev: '✅ Excellent',
         appDev: '✅ Good',
         aiDev: '⚠️ Basic',
         videoEditing: '✅ Good',
         gaming: '🎮 Light Gaming (Vega 7)',
         discount: '10% HP Education',
-        brand: 'HP Inc.',
+        brand: 'HP',
+        provider: 'HP Inc.',
         year: 2023,
         price: 40990,
         amazon: 41999,
         flipkart: 42500,
         official: 40990,
         offline: '43,000-45,000',
+        reliance: 44200,
         type: 'new',
-        bestFor: ['coding', 'general']
+        bestFor: ['webdev', 'coding', 'light-gaming'],
+        launchYear: 2023,
+        graphics: 'Vega 7',
+        gamingLevel: 'light',
+        processorCores: 6,
+        processorThreads: 12,
+        processorBase: 2.1,
+        processorBoost: 4.0,
+        processorBrand: 'AMD',
+        storageType: 'SSD',
+        storageSize: 512
     },
     {
         id: 2,
@@ -30,7 +42,7 @@ const laptopsData = [
         processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
         ram: '8GB DDR4',
         storage: '512GB SSD',
-        expandable: 'Both',
+        expandable: '✅ Both',
         webDev: '✅ Excellent',
         appDev: '✅ Excellent',
         aiDev: '⚠️ Moderate',
@@ -38,14 +50,26 @@ const laptopsData = [
         gaming: '🎮 Light Gaming (Iris Xe)',
         discount: '12% Lenovo Portal',
         brand: 'Lenovo',
+        provider: 'Lenovo',
         year: 2023,
         price: 44500,
         amazon: 45990,
         flipkart: 46200,
         official: 44500,
         offline: '46,000-48,000',
+        reliance: 47800,
         type: 'new',
-        bestFor: ['coding', 'general']
+        bestFor: ['appdev', 'coding', 'light-gaming'],
+        launchYear: 2023,
+        graphics: 'Iris Xe',
+        gamingLevel: 'light',
+        processorCores: 4,
+        processorThreads: 8,
+        processorBase: 2.4,
+        processorBoost: 4.2,
+        processorBrand: 'Intel',
+        storageType: 'SSD',
+        storageSize: 512
     },
     {
         id: 3,
@@ -53,7 +77,7 @@ const laptopsData = [
         processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
         ram: '8GB DDR4',
         storage: '512GB SSD',
-        expandable: 'RAM+SSD',
+        expandable: '✅ RAM+SSD',
         webDev: '✅ Excellent',
         appDev: '✅ Good',
         aiDev: '⚠️ Basic',
@@ -61,60 +85,96 @@ const laptopsData = [
         gaming: '🎮 Light Gaming (Iris Xe)',
         discount: '8% ASUS Education',
         brand: 'ASUS',
+        provider: 'ASUS',
         year: 2023,
-        price: 42990,
+        price: 43990,
         amazon: 43990,
         flipkart: 44500,
         official: 42990,
         offline: '44,000-46,000',
+        reliance: 45500,
         type: 'new',
-        bestFor: ['coding', 'general']
+        bestFor: ['webdev', 'coding', 'light-gaming'],
+        launchYear: 2023,
+        graphics: 'Iris Xe',
+        gamingLevel: 'light',
+        processorCores: 4,
+        processorThreads: 8,
+        processorBase: 2.4,
+        processorBoost: 4.2,
+        processorBrand: 'Intel',
+        storageType: 'SSD',
+        storageSize: 512
     },
     {
         id: 4,
-        model: 'Acer Aspire 5 A515-56',
-        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
-        ram: '16GB DDR4',
+        model: 'Acer Aspire 5 A515-57G',
+        processor: 'Intel Core i5-12450H (2.0-4.4 GHz, 8C/12T)',
+        ram: '8GB DDR4',
         storage: '512GB SSD',
-        expandable: 'RAM+SSD',
+        expandable: '✅ Both',
         webDev: '✅ Excellent',
         appDev: '✅ Excellent',
-        aiDev: '⚠️ Moderate',
-        videoEditing: '✅ Good',
-        gaming: '🎮 Light Gaming (Iris Xe)',
-        discount: '7% Acer Education',
+        aiDev: '✅ Good',
+        videoEditing: '✅ Excellent',
+        gaming: '🎮 Medium Gaming (RTX 2050)',
+        discount: '10% Acer Education',
         brand: 'Acer',
-        year: 2023,
-        price: 44990,
-        amazon: 45990,
-        flipkart: 46500,
-        official: 44990,
-        offline: '46,000-48,000',
+        provider: 'Acer',
+        year: 2024,
+        price: 46999,
+        amazon: 46999,
+        flipkart: 47200,
+        official: 45999,
+        offline: '47,000-49,000',
+        reliance: 48000,
         type: 'new',
-        bestFor: ['coding', 'multitasking']
+        bestFor: ['gaming', 'videoediting', 'ai'],
+        launchYear: 2024,
+        graphics: 'RTX 2050',
+        gamingLevel: 'medium',
+        processorCores: 8,
+        processorThreads: 12,
+        processorBase: 2.0,
+        processorBoost: 4.4,
+        processorBrand: 'Intel',
+        storageType: 'SSD',
+        storageSize: 512
     },
     {
         id: 5,
-        model: 'Dell Inspiron 3511',
-        processor: 'Intel Core i5-1135G7 (2.4-4.2 GHz, 4C/8T)',
+        model: 'HP 15s-eq2144AU',
+        processor: 'AMD Ryzen 5 5500U (2.1-4.0 GHz, 6C/12T)',
         ram: '8GB DDR4',
-        storage: '1TB HDD + 256GB SSD',
-        expandable: 'Both',
+        storage: '512GB SSD',
+        expandable: '✅ SSD Only',
         webDev: '✅ Excellent',
         appDev: '✅ Good',
         aiDev: '⚠️ Basic',
-        videoEditing: '⚠️ Basic',
-        gaming: '⚠️ Very Limited',
-        discount: '10% Dell University',
-        brand: 'Dell',
+        videoEditing: '✅ Good',
+        gaming: '🎮 Light Gaming (Vega 7)',
+        discount: '10% HP Student',
+        brand: 'HP',
+        provider: 'HP Inc.',
         year: 2023,
-        price: 46990,
-        amazon: 47990,
-        flipkart: 48500,
-        official: 46990,
-        offline: '48,000-50,000',
+        price: 36990,
+        amazon: 37999,
+        flipkart: 38500,
+        official: 36990,
+        offline: '38,000-40,000',
+        reliance: 39200,
         type: 'new',
-        bestFor: ['general', 'office']
+        bestFor: ['webdev', 'coding', 'light-gaming'],
+        launchYear: 2023,
+        graphics: 'Vega 7',
+        gamingLevel: 'light',
+        processorCores: 6,
+        processorThreads: 12,
+        processorBase: 2.1,
+        processorBoost: 4.0,
+        processorBrand: 'AMD',
+        storageType: 'SSD',
+        storageSize: 512
     },
     {
         id: 6,
@@ -702,149 +762,66 @@ const laptopsData = [
     }
 ];
 
-// Gaming Performance Data
-const gamingPerformance = [
-    {
-        category: 'No Gaming',
-        level: 'Cannot run modern games',
-        processor: 'Below i3-10th Gen',
-        ram: '4GB',
-        graphics: 'Intel UHD 600',
-        games: 'Basic 2D games only',
-        settings: 'N/A',
-        fps: 'N/A'
-    },
-    {
-        category: 'Very Limited',
-        level: 'Ancient games only',
-        processor: 'i3-10th Gen',
-        ram: '4-8GB',
-        graphics: 'Intel UHD 620',
-        games: 'Solitaire, Minesweeper',
-        settings: 'Low',
-        fps: '30+ FPS'
-    },
-    {
-        category: 'Light Gaming',
-        level: 'Casual & older games',
-        processor: 'i3-11th Gen / Ryzen 3 5000',
-        ram: '8GB',
-        graphics: 'Intel Iris Xe / Vega 7',
-        games: 'Minecraft, CS:GO, Rocket League',
-        settings: 'Low-Medium',
-        fps: '30-45 FPS'
-    },
-    {
-        category: 'Medium Gaming',
-        level: 'Indie & competitive games',
-        processor: 'i5-11th Gen / Ryzen 5 5000',
-        ram: '8GB',
-        graphics: 'GTX 1650 / RTX 2050',
-        games: 'Valorant, Fortnite, Apex Legends',
-        settings: 'Medium',
-        fps: '45-60 FPS'
-    },
-    {
-        category: 'Good Gaming',
-        level: 'Modern games',
-        processor: 'i5-12th Gen / Ryzen 5 6000',
-        ram: '8-16GB',
-        graphics: 'GTX 1650Ti / RTX 2050',
-        games: 'Call of Duty, GTA V, Cyberpunk 2077',
-        settings: 'Medium-High',
-        fps: '60+ FPS'
-    },
-    {
-        category: 'Excellent Gaming',
-        level: 'All games high settings',
-        processor: 'i7 / Ryzen 7',
-        ram: '16GB',
-        graphics: 'RTX 3060+ / RX 6600M+',
-        games: 'All AAA titles',
-        settings: 'High-Ultra',
-        fps: '60-120+ FPS'
-    }
-];
-
-// Student Discounts Data
-const studentDiscounts = [
-    {
-        brand: 'HP',
-        portal: 'HP Education Store',
-        discount: '5-12%',
-        verification: 'Student ID + Email',
-        benefits: 'Extended warranty, free shipping',
-        link: 'education.hp.com'
-    },
-    {
-        brand: 'Dell',
-        portal: 'Dell Education',
-        discount: '8-15%',
-        verification: 'Educational email',
-        benefits: 'Priority support, bulk discounts',
-        link: 'dell.com/learn/student'
-    },
-    {
-        brand: 'Lenovo',
-        portal: 'Lenovo Student',
-        discount: '5-12%',
-        verification: 'Student verification',
-        benefits: 'Gaming laptop discounts',
-        link: 'lenovo.com/students'
-    },
-    {
-        brand: 'ASUS',
-        portal: 'ASUS Education',
-        discount: '3-8%',
-        verification: 'Student ID required',
-        benefits: 'ROG gaming series included',
-        link: 'asus.com/in/education'
-    },
-    {
-        brand: 'Acer',
-        portal: 'Acer Education',
-        discount: '5-10%',
-        verification: 'University email',
-        benefits: 'Predator gaming discounts',
-        link: 'acer.com/education'
-    },
-    {
-        brand: 'MSI',
-        portal: 'MSI Student Program',
-        discount: '5-7%',
-        verification: 'Student verification',
-        benefits: 'Gaming laptop focus',
-        link: 'msi.com/student'
-    }
-];
 
 // DOM Elements
-const newLaptopsBody = document.getElementById('new-laptops-body');
-const refurbishedLaptopsBody = document.getElementById('refurbished-laptops-body');
-const gamingTableBody = document.querySelector('.gaming-table tbody');
-const discountCardsContainer = document.querySelector('.discount-cards');
-const applyFiltersBtn = document.getElementById('apply-filters');
-const newSearchInput = document.getElementById('new-search');
-const refurbishedSearchInput = document.getElementById('refurbished-search');
-
-// Filtered data
+let newLaptopsBody, refurbishedLaptopsBody;
+let newSearchInput, refurbishedSearchInput, applyFiltersBtn;
 let filteredNewLaptops = [];
 let filteredRefurbishedLaptops = [];
 
 // Initialize the page
 function init() {
-    // Filter laptops
-    filteredNewLaptops = laptopsData.filter(laptop => laptop.type === 'new');
-    filteredRefurbishedLaptops = laptopsData.filter(laptop => laptop.type === 'refurbished');
-    
-    // Render tables
-    renderLaptops();
-    renderGamingPerformance();
-    renderStudentDiscounts();
-    setupEventListeners();
-    
-    // Set up intersection observer for active nav highlighting
-    setupIntersectionObserver();
+    try {
+        console.log('Initializing application...');
+        
+        // Get DOM elements
+        newLaptopsBody = document.getElementById('new-laptops-body');
+        refurbishedLaptopsBody = document.getElementById('refurbished-laptops-body');
+        
+        if (!newLaptopsBody || !refurbishedLaptopsBody) {
+            console.warn('Some DOM elements not found. The page might not render correctly.');
+        }
+        
+        // Set initial filtered lists
+        filteredNewLaptops = laptopsData.filter(laptop => laptop.type === 'new');
+        filteredRefurbishedLaptops = laptopsData.filter(laptop => laptop.type === 'refurbished');
+        
+        console.log(`Loaded ${filteredNewLaptops.length} new laptops and ${filteredRefurbishedLaptops.length} refurbished laptops`);
+        
+        // Set up event listeners first to ensure they're ready
+        setupEventListeners();
+        
+        // Apply any initial filters from URL parameters
+        applyAllFilters();
+        
+        // Set up intersection observer for active nav highlighting
+        setupIntersectionObserver();
+        
+        console.log('Application initialized successfully');
+    } catch (error) {
+        console.error('Error initializing application:', error);
+        // Display error to user
+        const errorElement = document.createElement('div');
+        errorElement.className = 'error-message';
+        errorElement.textContent = 'An error occurred while loading the page. Please refresh and try again.';
+        document.body.prepend(errorElement);
+    }
+}
+
+// Helper function to get performance status class
+function getStatusClass(rating) {
+    if (!rating) return '';
+    if (rating.includes('✅')) return 'excellent';
+    if (rating.includes('⚠️')) return 'basic';
+    if (rating.includes('❌')) return 'poor';
+    return 'good';
+}
+
+// Helper function to get brand from model name
+function getBrand(model) {
+    if (!model) return '';
+    const brand = model.split(' ')[0];
+    return brand.replace(/[^a-zA-Z]/g, ''); // Remove any non-alphabetic characters
 }
 
 // Render laptops to the DOM
@@ -857,25 +834,44 @@ function renderLaptops() {
     if (filteredNewLaptops.length === 0) {
         newLaptopsBody.innerHTML = `
             <tr>
-                <td colspan="11" class="no-results">No new laptops found matching your criteria.</td>
+                <td colspan="12" class="no-results">No new laptops found matching your criteria.</td>
             </tr>`;
     } else {
         filteredNewLaptops.forEach(laptop => {
+            const brand = laptop.brand || getBrand(laptop.model);
+            const processorName = laptop.processor.split('(')[0].trim();
+            const storageInfo = laptop.storage + (laptop.expandable ? ` (${laptop.expandable})` : '');
+            
             const row = document.createElement('tr');
             row.dataset.id = laptop.id;
             row.innerHTML = `
-                <td>${laptop.model}</td>
-                <td>${laptop.processor.split('(')[0].trim()}</td>
+                <td class="brand-cell">
+                    <div class="brand-logo brand-${brand.toLowerCase()}" title="${brand}"></div>
+                </td>
+                <td class="model-cell">${laptop.model}</td>
+                <td title="${laptop.processor}">${processorName}</td>
                 <td>${laptop.ram}</td>
-                <td>${laptop.storage} ${laptop.expandable ? `(${laptop.expandable})` : ''}</td>
-                <td class="status-${laptop.webDev.includes('✅') ? 'excellent' : 'good'}">${laptop.webDev}</td>
-                <td class="status-${laptop.appDev.includes('✅') ? 'excellent' : 'good'}">${laptop.appDev}</td>
-                <td class="status-${laptop.aiDev.includes('✅') ? 'excellent' : laptop.aiDev.includes('⚠️') ? 'basic' : 'poor'}">${laptop.aiDev}</td>
-                <td class="status-${laptop.videoEditing.includes('✅') ? 'excellent' : 'good'}">${laptop.videoEditing}</td>
-                <td>${laptop.gaming}</td>
-                <td>₹${laptop.price.toLocaleString('en-IN')}</td>
-                <td>
-                    <button class="btn btn-sm view-details" data-id="${laptop.id}">Details</button>
+                <td>${storageInfo}</td>
+                <td class="status-cell status-${getStatusClass(laptop.webDev)}" title="Web Development">
+                    ${laptop.webDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.appDev)}" title="App Development">
+                    ${laptop.appDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.aiDev)}" title="AI/ML Development">
+                    ${laptop.aiDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.videoEditing)}" title="Video Editing">
+                    ${laptop.videoEditing.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="gaming-cell" title="${laptop.gaming}">
+                    ${laptop.gaming.replace(/[🎮🕹️]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="price-cell">₹${laptop.price.toLocaleString('en-IN')}</td>
+                <td class="actions">
+                    <button class="btn btn-sm view-details" data-id="${laptop.id}" title="View Details">
+                        <i class="fas fa-eye"></i> Details
+                    </button>
                 </td>
             `;
             newLaptopsBody.appendChild(row);
@@ -886,26 +882,45 @@ function renderLaptops() {
     if (filteredRefurbishedLaptops.length === 0) {
         refurbishedLaptopsBody.innerHTML = `
             <tr>
-                <td colspan="12" class="no-results">No refurbished laptops found matching your criteria.</td>
+                <td colspan="13" class="no-results">No refurbished laptops found matching your criteria.</td>
             </tr>`;
     } else {
         filteredRefurbishedLaptops.forEach(laptop => {
+            const brand = laptop.brand || getBrand(laptop.model);
+            const processorName = laptop.processor.split('(')[0].trim();
+            const storageInfo = laptop.storage + (laptop.expandable ? ` (${laptop.expandable})` : '');
+            
             const row = document.createElement('tr');
             row.dataset.id = laptop.id;
             row.innerHTML = `
-                <td>${laptop.model}</td>
-                <td>${laptop.processor.split('(')[0].trim()}</td>
+                <td class="brand-cell">
+                    <div class="brand-logo brand-${brand.toLowerCase()}" title="${brand}"></div>
+                </td>
+                <td class="model-cell">${laptop.model}</td>
+                <td title="${laptop.processor}">${processorName}</td>
                 <td>${laptop.ram}</td>
-                <td>${laptop.storage} ${laptop.expandable ? `(${laptop.expandable})` : ''}</td>
-                <td class="status-${laptop.webDev.includes('✅') ? 'excellent' : 'good'}">${laptop.webDev}</td>
-                <td class="status-${laptop.appDev.includes('✅') ? 'excellent' : 'good'}">${laptop.appDev}</td>
-                <td class="status-${laptop.aiDev.includes('✅') ? 'excellent' : laptop.aiDev.includes('⚠️') ? 'basic' : 'poor'}">${laptop.aiDev}</td>
-                <td class="status-${laptop.videoEditing.includes('✅') ? 'excellent' : 'good'}">${laptop.videoEditing}</td>
-                <td>${laptop.gaming}</td>
-                <td>₹${laptop.price.toLocaleString('en-IN')}</td>
+                <td>${storageInfo}</td>
+                <td class="status-cell status-${getStatusClass(laptop.webDev)}" title="Web Development">
+                    ${laptop.webDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.appDev)}" title="App Development">
+                    ${laptop.appDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.aiDev)}" title="AI/ML Development">
+                    ${laptop.aiDev.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="status-cell status-${getStatusClass(laptop.videoEditing)}" title="Video Editing">
+                    ${laptop.videoEditing.replace(/[✅⚠️❌]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="gaming-cell" title="${laptop.gaming}">
+                    ${laptop.gaming.replace(/[🎮🕹️]/g, '').trim() || 'N/A'}
+                </td>
+                <td class="price-cell">₹${laptop.price.toLocaleString('en-IN')}</td>
                 <td>${laptop.warranty || 'N/A'}</td>
-                <td>
-                    <button class="btn btn-sm view-details" data-id="${laptop.id}">Details</button>
+                <td class="actions">
+                    <button class="btn btn-sm view-details" data-id="${laptop.id}" title="View Details">
+                        <i class="fas fa-eye"></i> Details
+                    </button>
                 </td>
             `;
             refurbishedLaptopsBody.appendChild(row);
@@ -916,65 +931,10 @@ function renderLaptops() {
     setupLaptopDetailsButtons();
 }
 
-// Render gaming performance table
-function renderGamingPerformance() {
-    if (!gamingTableBody) return;
 
-    const rows = gamingPerformance.map(item => `
-        <tr>
-            <td>${item.category}</td>
-            <td>${item.level}</td>
-            <td>${item.processor}</td>
-            <td>${item.ram}</td>
-            <td>${item.graphics}</td>
-            <td>${item.games}</td>
-            <td>${item.settings}</td>
-            <td>${item.fps}</td>
-        </tr>
-    `).join('');
-
-    gamingTableBody.innerHTML = rows;
-}
-
-// Render student discount cards
-function renderStudentDiscounts() {
-    if (!discountCardsContainer) return;
-
-    const cards = studentDiscounts.map(discount => `
-        <div class="discount-card">
-            <h3>${discount.brand} - ${discount.discount} off</h3>
-            <p><strong>Portal:</strong> ${discount.portal}</p>
-            <p><strong>Verification:</strong> ${discount.verification}</p>
-            <p><strong>Benefits:</strong> ${discount.benefits}</p>
-            <p><a href="https://${discount.link}" target="_blank" class="btn btn-sm">Visit Portal</a></p>
-        </div>
-    `).join('');
-
-    discountCardsContainer.innerHTML = cards;
-}
-
-// Filter laptops based on selected filters
+// Filter laptops based on selected filters (legacy function, now using applyAllFilters)
 function filterLaptops() {
-    const category = document.getElementById('category').value;
-    const maxPrice = parseInt(document.getElementById('price-range').value);
-    const usage = document.getElementById('usage').value;
-
-    let filtered = [...laptopsData];
-
-    // Filter by category
-    if (category !== 'all') {
-        filtered = filtered.filter(laptop => laptop.type === category);
-    }
-
-    // Filter by price
-    filtered = filtered.filter(laptop => laptop.price <= maxPrice);
-
-    // Filter by usage
-    if (usage !== 'all') {
-        filtered = filtered.filter(laptop => laptop.bestFor.includes(usage));
-    }
-
-    renderLaptops(filtered);
+    applyAllFilters();
 }
 
 // Setup event listeners
@@ -986,13 +946,19 @@ function setupEventListeners() {
     
     // Search functionality
     if (newSearchInput) {
-        newSearchInput.addEventListener('input', (e) => filterLaptopsBySearch(e.target.value, 'new'));
-        document.getElementById('new-search-btn').addEventListener('click', () => filterLaptopsBySearch(newSearchInput.value, 'new'));
+        newSearchInput.addEventListener('input', () => applyAllFilters());
+        const newSearchBtn = document.getElementById('new-search-btn');
+        if (newSearchBtn) {
+            newSearchBtn.addEventListener('click', () => applyAllFilters());
+        }
     }
     
     if (refurbishedSearchInput) {
-        refurbishedSearchInput.addEventListener('input', (e) => filterLaptopsBySearch(e.target.value, 'refurbished'));
-        document.getElementById('refurbished-search-btn').addEventListener('click', () => filterLaptopsBySearch(refurbishedSearchInput.value, 'refurbished'));
+        refurbishedSearchInput.addEventListener('input', () => applyAllFilters());
+        const refurbishedSearchBtn = document.getElementById('refurbished-search-btn');
+        if (refurbishedSearchBtn) {
+            refurbishedSearchBtn.addEventListener('click', () => applyAllFilters());
+        }
     }
 
     // Smooth scrolling for navigation links
@@ -1055,122 +1021,232 @@ function setupIntersectionObserver() {
     sections.forEach(section => observer.observe(section));
 }
 
-// Filter laptops by search query
-function filterLaptopsBySearch(query, type) {
-    const searchTerm = query.toLowerCase().trim();
+/**
+ * Apply all filters and search criteria to the laptops data
+ */
+function applyAllFilters() {
+    // Get filter values
+    const category = document.getElementById('category')?.value || 'all';
+    const maxPrice = parseInt(document.getElementById('price-range')?.value) || 100000;
+    const usage = document.getElementById('usage')?.value || 'all';
+    const newSearchTerm = (document.getElementById('new-search')?.value || '').toLowerCase().trim();
+    const refurbishedSearchTerm = (document.getElementById('refurbished-search')?.value || '').toLowerCase().trim();
     
-    if (type === 'new') {
-        filteredNewLaptops = laptopsData.filter(laptop => {
-            if (laptop.type !== 'new') return false;
-            if (!searchTerm) return true;
-            
-            return (
-                laptop.model.toLowerCase().includes(searchTerm) ||
-                laptop.processor.toLowerCase().includes(searchTerm) ||
-                laptop.ram.toLowerCase().includes(searchTerm) ||
-                laptop.gaming.toLowerCase().includes(searchTerm) ||
-                laptop.price.toString().includes(searchTerm)
+    // Filter new laptops
+    filteredNewLaptops = laptopsData.filter(laptop => {
+        // Filter by type first (new/refurbished)
+        if (laptop.type !== 'new') return false;
+        
+        // Apply category filter
+        if (category !== 'all' && laptop.type !== category) return false;
+        
+        // Apply price filter
+        if (laptop.price > maxPrice) return false;
+        
+        // Apply usage filter
+        if (usage !== 'all' && !laptop.bestFor?.includes(usage)) return false;
+        
+        // Apply search term if present
+        if (newSearchTerm) {
+            const searchMatch = (
+                laptop.model?.toLowerCase().includes(newSearchTerm) ||
+                laptop.processor?.toLowerCase().includes(newSearchTerm) ||
+                laptop.ram?.toLowerCase().includes(newSearchTerm) ||
+                laptop.gaming?.toLowerCase().includes(newSearchTerm) ||
+                laptop.price?.toString().includes(newSearchTerm) ||
+                (laptop.brand?.toLowerCase().includes(newSearchTerm))
             );
-        });
-    } else if (type === 'refurbished') {
-        filteredRefurbishedLaptops = laptopsData.filter(laptop => {
-            if (laptop.type !== 'refurbished') return false;
-            if (!searchTerm) return true;
-            
-            return (
-                laptop.model.toLowerCase().includes(searchTerm) ||
-                laptop.processor.toLowerCase().includes(searchTerm) ||
-                laptop.ram.toLowerCase().includes(searchTerm) ||
-                laptop.gaming.toLowerCase().includes(searchTerm) ||
-                laptop.price.toString().includes(searchTerm)
-            );
-        });
-    }
+            if (!searchMatch) return false;
+        }
+        
+        return true;
+    });
     
+    // Filter refurbished laptops
+    filteredRefurbishedLaptops = laptopsData.filter(laptop => {
+        // Filter by type first (new/refurbished)
+        if (laptop.type !== 'refurbished') return false;
+        
+        // Apply category filter
+        if (category !== 'all' && laptop.type !== category) return false;
+        
+        // Apply price filter
+        if (laptop.price > maxPrice) return false;
+        
+        // Apply usage filter
+        if (usage !== 'all' && !laptop.bestFor?.includes(usage)) return false;
+        
+        // Apply search term if present
+        if (refurbishedSearchTerm) {
+            const searchMatch = (
+                laptop.model?.toLowerCase().includes(refurbishedSearchTerm) ||
+                laptop.processor?.toLowerCase().includes(refurbishedSearchTerm) ||
+                laptop.ram?.toLowerCase().includes(refurbishedSearchTerm) ||
+                laptop.gaming?.toLowerCase().includes(refurbishedSearchTerm) ||
+                laptop.price?.toString().includes(refurbishedSearchTerm) ||
+                (laptop.brand?.toLowerCase().includes(refurbishedSearchTerm))
+            );
+            if (!searchMatch) return false;
+        }
+        
+        return true;
+    });
+    
+    // Update the UI
     renderLaptops();
 }
 
-// Setup laptop details buttons
+// Filter laptops by search query (kept for backward compatibility)
+function filterLaptopsBySearch(query, type) {
+    if (type === 'new') {
+        document.getElementById('new-search').value = query;
+    } else if (type === 'refurbished') {
+        document.getElementById('refurbished-search').value = query;
+    }
+    applyAllFilters();
+}
+
+// Setup laptop details buttons with event delegation
 function setupLaptopDetailsButtons() {
-    document.querySelectorAll('.view-details').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const laptopId = e.target.dataset.id;
-            const laptop = [...filteredNewLaptops, ...filteredRefurbishedLaptops].find(l => l.id === laptopId);
-            if (laptop) {
-                showLaptopDetails(laptop);
+    // Use event delegation for better performance with dynamic content
+    document.addEventListener('click', (e) => {
+        // Check if the clicked element is a details button or inside one
+        const button = e.target.closest('.view-details');
+        if (!button) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Get laptop ID from data attribute
+        const laptopId = button.dataset.id;
+        if (!laptopId) return;
+        
+        // Find the laptop in both new and refurbished lists
+        const laptop = [...filteredNewLaptops, ...filteredRefurbishedLaptops].find(l => 
+            String(l.id) === String(laptopId)
+        );
+        
+        if (laptop) {
+            showLaptopDetails(laptop);
+        } else {
+            console.error('Laptop not found with ID:', laptopId);
+        }
+    });
+    
+    // Also handle the close button in the modal
+    const closeBtn = document.querySelector('.close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            const modal = document.getElementById('laptop-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
             }
         });
-    });
+    }
 }
 
 // Show laptop details in modal with animations
 function showLaptopDetails(laptop) {
-    const modal = document.getElementById('laptop-details-modal');
-    const modalContent = modal.querySelector('.modal-content');
+    const modal = document.getElementById('laptop-modal');
     
-    // Format specifications into a more readable format
-    const formatSpecs = (specs) => {
-        if (!specs) return 'N/A';
-        return specs.split('|').map(s => s.trim()).filter(s => s).join(' • ');
+    // Format price with currency symbol
+    const formatPrice = (price) => {
+        if (!price) return 'N/A';
+        if (typeof price === 'string') return price; // Return as is if it's already formatted
+        return `₹${price.toLocaleString('en-IN')}`;
     };
-    
-    // Create modal content with enhanced layout
-    modalContent.innerHTML = `
-        <button class="close-btn" aria-label="Close">&times;</button>
-        <h2>${laptop.model}</h2>
-        <div class="price-highlight">₹${laptop.price.toLocaleString('en-IN')}${laptop.originalPrice ? 
-            ` <small style="font-size: 1rem; color: var(--light-text); text-decoration: line-through;">₹${laptop.originalPrice.toLocaleString('en-IN')}</small>
-              <span style="color: #e74c3c; font-size: 1rem; margin-left: 0.5rem;">${laptop.discount}% OFF</span>` : ''}
-        </div>
-        
-        <div class="laptop-details">
-            <div class="detail-group">
-                <h3><i class="fas fa-microchip"></i> Specifications</h3>
-                <p><strong>Processor:</strong> <span>${laptop.processor}</span></p>
-                <p><strong>RAM:</strong> <span>${laptop.ram}</span></p>
-                <p><strong>Storage:</strong> <span>${laptop.storage} ${laptop.expandable ? `(${laptop.expandable})` : ''}</span></p>
-                <p><strong>Display:</strong> <span>${laptop.display || 'N/A'}</span></p>
-                <p><strong>Graphics:</strong> <span>${laptop.graphics || 'Integrated'}</span></p>
-                ${laptop.weight ? `<p><strong>Weight:</strong> <span>${laptop.weight}</span></p>` : ''}
-                ${laptop.os ? `<p><strong>OS:</strong> <span>${laptop.os}</span></p>` : ''}
-            </div>
-            
-            <div class="detail-group">
-                <h3><i class="fas fa-chart-line"></i> Performance</h3>
-                <p><strong>Web Development:</strong> <span class="status-${laptop.webDev.includes('✅') ? 'excellent' : 'good'}">${formatSpecs(laptop.webDev)}</span></p>
-                <p><strong>App Development:</strong> <span class="status-${laptop.appDev.includes('✅') ? 'excellent' : 'good'}">${formatSpecs(laptop.appDev)}</span></p>
-                <p><strong>AI/ML:</strong> <span class="status-${laptop.aiDev.includes('✅') ? 'excellent' : laptop.aiDev.includes('⚠️') ? 'basic' : 'poor'}">${formatSpecs(laptop.aiDev)}</span></p>
-                <p><strong>Video Editing:</strong> <span class="status-${laptop.videoEditing.includes('✅') ? 'excellent' : 'good'}">${formatSpecs(laptop.videoEditing)}</span></p>
-                <p><strong>Gaming:</strong> <span>${laptop.gaming}</span></p>
-            </div>
-            
-            <div class="detail-group">
-                <h3><i class="fas fa-info-circle"></i> Additional Info</h3>
-                ${laptop.warranty ? `<p><strong>Warranty:</strong> <span>${laptop.warranty}</span></p>` : ''}
-                <p><strong>Availability:</strong> <span>${laptop.availability || 'In Stock'}</span></p>
-                ${laptop.battery ? `<p><strong>Battery:</strong> <span>${laptop.battery}</span></p>` : ''}
-                ${laptop.ports ? `<p><strong>Ports:</strong> <span>${laptop.ports}</span></p>` : ''}
-                ${laptop.additionalFeatures ? `<p><strong>Features:</strong> <span>${laptop.additionalFeatures}</span></p>` : ''}
-                ${laptop.lastUpdated ? `<p><strong>Last Updated:</strong> <span>${laptop.lastUpdated}</span></p>` : ''}
-            </div>
-        </div>
-        
-        <div class="modal-actions">
-            <a href="${laptop.buyLink || '#'}" target="_blank" class="btn btn-primary" style="flex: 1;">
-                <i class="fas fa-shopping-cart"></i> Buy Now
-            </a>
-            <button class="btn btn-outline close-modal" style="flex: 0 0 auto;">
-                <i class="fas fa-times"></i> Close
-            </button>
-        </div>
+
+    // Format performance rating
+    const getPerformanceClass = (rating) => {
+        if (!rating) return '';
+        if (rating.includes('✅')) return 'excellent';
+        if (rating.includes('⚠️')) return 'basic';
+        if (rating.includes('❌')) return 'poor';
+        return 'good';
+    };
+
+    // Set laptop name and brand
+    document.getElementById('modal-laptop-name').textContent = laptop.model;
+    document.getElementById('modal-laptop-brand').textContent = laptop.brand || 'Laptop';
+
+    // Set specifications
+    const specsList = document.getElementById('modal-specs');
+    specsList.innerHTML = `
+        <li><span class="spec-label">Processor</span> <span class="spec-value">${laptop.processor.split('(')[0].trim()}</span></li>
+        <li><span class="spec-label">RAM</span> <span class="spec-value">${laptop.ram}</span></li>
+        <li><span class="spec-label">Storage</span> <span class="spec-value">${laptop.storage} ${laptop.expandable ? `(${laptop.expandable})` : ''}</span></li>
+        <li><span class="spec-label">Graphics</span> <span class="spec-value">${laptop.graphics || 'Integrated'}</span></li>
+        <li><span class="spec-label">Type</span> <span class="spec-value">${laptop.type === 'new' ? 'New' : 'Refurbished'}</span></li>
     `;
+
+    // Set performance ratings
+    document.getElementById('web-dev').textContent = laptop.webDev.replace(/[✅⚠️❌]/g, '').trim();
+    document.getElementById('web-dev').className = `performance-value status-${getPerformanceClass(laptop.webDev)}`;
     
-    // Show modal with animation
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.getElementById('app-dev').textContent = laptop.appDev.replace(/[✅⚠️❌]/g, '').trim();
+    document.getElementById('app-dev').className = `performance-value status-${getPerformanceClass(laptop.appDev)}`;
     
-    // Add event listeners
+    document.getElementById('ai-dev').textContent = laptop.aiDev.replace(/[✅⚠️❌]/g, '').trim();
+    document.getElementById('ai-dev').className = `performance-value status-${getPerformanceClass(laptop.aiDev)}`;
+    
+    document.getElementById('video-edit').textContent = laptop.videoEditing.replace(/[✅⚠️❌]/g, '').trim();
+    document.getElementById('video-edit').className = `performance-value status-${getPerformanceClass(laptop.videoEditing)}`;
+    
+    document.getElementById('gaming-perf').textContent = laptop.gaming.replace(/[🎮🕹️]/g, '').trim();
+    document.getElementById('gaming-perf').className = `performance-value status-${laptop.gamingLevel || 'basic'}`;
+
+    // Set pricing
+    document.getElementById('best-price').textContent = formatPrice(laptop.price);
+    document.getElementById('amazon-price').textContent = formatPrice(laptop.amazon);
+    document.getElementById('flipkart-price').textContent = formatPrice(laptop.flipkart);
+    document.getElementById('official-price').textContent = formatPrice(laptop.official);
+    document.getElementById('offline-price').textContent = formatPrice(laptop.offline);
+
+    // Set additional info
+    const additionalInfo = document.getElementById('additional-info');
+    additionalInfo.innerHTML = '';
+    
+    if (laptop.warranty) {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fas fa-shield-alt"></i> Warranty: ${laptop.warranty}`;
+        additionalInfo.appendChild(li);
+    }
+    
+    if (laptop.launchYear) {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fas fa-calendar-alt"></i> Launch Year: ${laptop.launchYear}`;
+        additionalInfo.appendChild(li);
+    }
+    
+    if (laptop.discount) {
+        const li = document.createElement('li');
+        li.innerHTML = `<i class="fas fa-tag"></i> Discount: ${laptop.discount}`;
+        additionalInfo.appendChild(li);
+    }
+
+    // Set up view online button
+    const viewOnlineBtn = document.getElementById('view-online');
+    if (laptop.amazon || laptop.flipkart) {
+        viewOnlineBtn.onclick = () => {
+            window.open(laptop.amazon || laptop.flipkart, '_blank');
+        };
+        viewOnlineBtn.disabled = false;
+    } else {
+        viewOnlineBtn.disabled = true;
+    }
+
+    // Show modal
+    modal.style.display = 'block';
+    setTimeout(() => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }, 10);
+
+    // Close modal handlers
     const closeModal = () => {
         modal.classList.remove('active');
         setTimeout(() => {
@@ -1178,56 +1254,75 @@ function showLaptopDetails(laptop) {
             document.body.style.overflow = 'auto';
         }, 300);
     };
-    
-    const handleEscapeKey = (e) => {
-        if (e.key === 'Escape') closeModal();
-    };
-    
-    // Close modal handlers
-    modal.querySelector('.close-btn').addEventListener('click', closeModal);
-    modal.querySelector('.close-modal').addEventListener('click', closeModal);
-    
-    // Close when clicking outside content
-    modal.addEventListener('click', (e) => e.target === modal && closeModal());
-    
-    // Keyboard navigation
+
+    const handleEscapeKey = (e) => e.key === 'Escape' && closeModal();
+
+    // Set up event listeners
+    modal.querySelector('.close-btn').onclick = closeModal;
     document.addEventListener('keydown', handleEscapeKey);
-    
-    // Cleanup
-    return () => {
-        document.removeEventListener('keydown', handleEscapeKey);
-    };
+    modal.onclick = (e) => e.target === modal && closeModal();
 }
 
 // Add CSS for modal
 const modalStyles = document.createElement('style');
 modalStyles.textContent = `
+    /* Modal Styles */
     .modal {
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
         z-index: 1000;
-        padding: 1rem;
-        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        overflow-y: auto;
     }
-    
+        
+    .modal.active {
+        opacity: 1;
+    }
+        
     .modal-content {
         background: white;
-        padding: 2rem;
-        border-radius: 8px;
+        margin: 2rem auto;
         max-width: 800px;
-        width: 100%;
-        max-height: 90vh;
+        width: 90%;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        padding: 2rem;
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+    }
+        
+    .modal.active .modal-content {
+        transform: translateY(0);
+    }
+        
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+        
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #1f2937;
+    }
+        
+    .modal-body {
+        max-height: 70vh;
         overflow-y: auto;
         position: relative;
     }
-    
+        
     .close-btn {
         position: absolute;
         top: 1rem;
@@ -1236,38 +1331,38 @@ modalStyles.textContent = `
         cursor: pointer;
         line-height: 1;
     }
-    
+        
     .laptop-details {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
         margin: 2rem 0;
     }
-    
+        
     .detail-group h3 {
         color: var(--primary-color);
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid var(--border-color);
     }
-    
+        
     .modal-actions {
         display: flex;
         gap: 1rem;
         margin-top: 2rem;
     }
-    
+        
     .btn-outline {
         background: none;
         border: 2px solid var(--primary-color);
         color: var(--primary-color);
     }
-    
+        
     .btn-sm {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
     }
-    
+        
     .no-results {
         text-align: center;
         padding: 2rem;
@@ -1280,4 +1375,7 @@ modalStyles.textContent = `
 document.head.appendChild(modalStyles);
 
 // Initialize the application when DOM is loaded
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded, initializing application...');
+    init();
+});
